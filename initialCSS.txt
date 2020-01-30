@@ -1,0 +1,74 @@
+.body{
+ 
+  box-sizing: border-box;
+}
+
+.upper-container{
+  background-image: url('states-nature.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.h1, .h3, .flash{
+  color: white;
+  margin: 2rem;
+  
+  
+  
+}
+.h1{margin-top: 100px;
+font-size: x-large;
+}
+.h3{
+ 
+  
+  
+}
+
+  while(country < countriesArray.length){
+    //console.log(countriesArray[country]);
+    if(userInput.value === countriesArray[country]){
+      console.log(countriesArray[country])
+    }else{
+      console.log("No country found")
+    }
+    
+    country++
+  }
+
+// PRINTS ALL THE COUNTRIES
+    for(let country = 0; country < countriesArray.length; country++){
+    //console.log(countriesArray[country]);
+    if(countriesArray[country].startsWith = ("userInput.value")){
+      console.log(countriesArray[country])
+    }else{
+      console.log("Nothing")
+    }
+
+  }
+
+
+  if(countriesArray[country].startsWith(myString)) {
+      
+      searchResult.push(countriesArray[country]);
+      return searchResult
+    }else{
+      console.log("Nothing");
+    }
+    return searchResult
+
+
+        switch (myString) {
+      case countriesArray[country].startsWith(myString):
+        console.log(countriesArray[country]);
+        break;
+        console.log(myString)
+      default:
+        break;
+    }

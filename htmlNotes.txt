@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body">
+  <div class="upper-container">
+    <div class="h1">Global list of states (GLOS 2020)</div>
+    <div class="total-countries"> Total number of countries: 193</div>
+    <div class="flash-display"></div>
+    <div class="buttons">
+      <button class="starting-letter">Starting word</button>
+      <button class="search-word">Search with word segment</button>
+    </div>
+    <div class="inputNdSearch">
+      <input type="text" name="" class="search-field">
+      <img src="" alt="" class="search-icon">
+      <button display-order></button>
+    </div>
+  </div>
+
+  <div class="countries-container"></div>
+  
+  <script src="countriesList.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

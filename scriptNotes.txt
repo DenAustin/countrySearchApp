@@ -1,0 +1,108 @@
+// COUNTRIES API BY DENIS - 20200128
+
+
+const countriesContainer = document.querySelector(".countries-container"); // To localize target html container
+const searchField = document.querySelector(".search-field"); // User input text field
+const totalCountries = document.querySelector('.total-countries')
+const startingLetterBtn = document.querySelector(".starting-letter"); // Search states by starting letters
+const buttonsDiv = document.querySelector('.buttons')
+/*
+//OTHER HTML ELEMENTS' SELECTORS
+const flasher = document.querySelector("flash-display"); // To flash ...
+const firstCharButton = document.querySelector("starting-letter"); // Search states by starting letters
+const keyWordButton = document.querySelector("search-word");
+
+const searchLensIcon = document.querySelector("search-icon"); //Search/magnifying lens icon
+const displayOrder = document.querySelector("display-order"); // Ascending or descending display order 
+
+// API Function
+
+const countriesAPI = () => {
+  let searchResult = [];
+  
+  for(const country of countriesArray){
+    //console.log(countriesArray[country]);
+    let userInput = document.querySelector(".search-field");
+    let myString = userInput.value;
+    let output = country.startsWith(myString);
+    
+    if(output == true) {
+      
+      searchResult.push(countriesArray[country]);
+      return searchResult
+      
+    }else{
+      console.log("Nothing");
+    }
+    return searchResult
+    console.log(searchResult)
+
+    
+
+
+
+  }
+
+}
+*/
+
+//console.log(countriesAPI());
+
+const filterCountriesByStartingStr = (arr, term) => {
+  const filteredCountries = arr.filter((country) =>  country.toLowerCase().startsWith(term.toLowerCase()))
+  return filteredCountries
+}
+
+
+const showCountries = (arr) => {
+
+  countriesContainer.innerHTML = ''
+
+  let content = ''
+  for(const country of arr){
+
+    content += `<div>
+    <h1>${country}</h1>
+    </div>`
+  }
+
+  countriesContainer.innerHTML = content
+
+
+}
+
+showCountries(countries)
+
+const filterCountries = (arr, term) => {
+  const filteredCountries = arr.filter((country) =>  country.toLowerCase().includes(term.toLowerCase()))
+  return filteredCountries
+}
+
+searchField.addEventListener('input', (event) => {
+  let searchTerm = event.target.value
+  const filteredCountries = filterCountries(countries, searchTerm)
+  showCountries(filteredCountries)
+
+})
+
+// startingLetterBtn.addEventListener('click', (event) => {
+
+// })
+
+buttonsDiv.addEventListener('click', (e) => {
+
+  let flag = false
+  let target = e.target
+
+
+
+  if(target.className === 'starting-letter'){
+    target.classList.add('active')
+  } else if (target.className = 'search-word'){
+    target.classList.add('active')
+    target.classList.add('active')
+
+  }
+  console.log(e.target.className)
+
+})
