@@ -53,7 +53,7 @@ const countriesContainer = document.querySelector(".countries-container"); // To
 const searchField = document.querySelector(".search-field"); // User input text field
 const totalCountries = document.querySelector('.total-countries')
 const startLetterBtn = document.querySelector(".starting-letter"); // Search states by starting letters
-const searchLetterBtn = document.querySelector(".search-word");
+const searchKeyWordBtn = document.querySelector(".search-word");
 const buttonsDiv = document.querySelector('.buttons')
 
 
@@ -140,6 +140,8 @@ reverseUp.addEventListener('click', (e) => {
 
 //<i class="fas fa-sort-alpha-up"></i>
 
+
+reverseUp.addEventListener
  
 
 

@@ -26,8 +26,8 @@ const reverseButton = document.querySelector(".reverse-button")
 // function to filter nations by start letter
 const filterCountriesByStartingStr = () => {
   countriesContainer.innerHTML = ""
-  let keys = document.querySelector(".search-field").value;
-  const filteredCountries = countries.filter((country) => country.toLowerCase().startsWith(keys.toLowerCase()))
+  let states = document.querySelector(".search-field").value;
+  const filteredCountries = countries.filter((country) => country.toLowerCase().startsWith(states.toLowerCase()))
   showCountries(filteredCountries)
   return filteredCountries
 }
@@ -36,8 +36,8 @@ filterCountriesByStartingStr()
 // function to filter nations by string segment
 const filterNationsByStrSequence = () => {
   countriesContainer.innerHTML = ""
-  let clues = document.querySelector(".search-field").value;
-  const filteredCountries = countries.filter((country) => country.toLowerCase().indexOf(clues.toLowerCase()) > -1)
+  let states = document.querySelector(".search-field").value;
+  const filteredCountries = countries.filter((country) => country.toLowerCase().indexOf(states.toLowerCase()) > -1)
   showCountries(filteredCountries)
   return filteredCountries
 }
@@ -49,39 +49,18 @@ filterNationsByStrSequence()
 
 startLetterBtn.addEventListener("click", function(){
   filterCountriesByStartingStr()
+  
+
 })
+
 searchStringsBtn.addEventListener("click", function(){
   
   filterNationsByStrSequence()
+  
+
 })
 
-
 reverseButton.addEventListener("click", function(){
-  if(searchField.value.length <= 0){
-    let reverseArr = countries.reverse();
-    showCountries(reverseArr)
-
-  }else{
-    const filterRepsByStrSequence = () => {
-      countriesContainer.innerHTML = ""
-      let clues = document.querySelector(".search-field").value;
-      let revCountries = countries.reverse()
-      const filteredCountries = revCountries.filter((country) => country.toLowerCase().indexOf(clues.toLowerCase()) > -1)
-      showCountries(filteredCountries)
-      return filteredCountries
-    }
-    filterRepsByStrSequence()
-    
-   
-  }
-});
-
-
-
-
-
-
-
-
-
-
+let reverseArr = countries.reverse();
+showCountries(reverseArr)
+})

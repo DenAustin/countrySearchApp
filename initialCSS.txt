@@ -72,3 +72,43 @@ font-size: x-large;
       default:
         break;
     }
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+************************************************************************************
+
+searchStringsBtn.addEventListener("click", function(){
+  filterNationsByStrSequence()
+  numberOfStates = filterNationsByStrSequence().length
+  console.log(numberOfStates)
+  console.log(resultFlash.innerHTML)
+  resultFlash.innerHTML = ""
+  //resultFlash.innerHTML = numberOfStates
+  resultFlash.innerHTML = `The search yields: ${numberOfStates} county/ies`
+})
+
+
+reverseButton.addEventListener("click", function(){
+  if(searchField.value.length <= 0){
+    let reverseArr = countries.reverse();
+    showCountries(reverseArr)
+    resultFlash.innerHTML = `The search yields: ${countries.length} county/ies`
+
+  }else{
+    const filterRepsByStrSequence = () => {
+      countriesContainer.innerHTML = ""
+      let clues = document.querySelector(".search-field").value;
+      let revCountries = countries.reverse()
+      const filteredCountries = revCountries.filter((country) => country.toLowerCase().indexOf(clues.toLowerCase()) > -1)
+      showCountries(filteredCountries)
+      return filteredCountries
+    }
+    filterRepsByStrSequence()
+    numberOfStates = filterRepsByStrSequence().length
+    console.log(numberOfStates)
+    console.log(resultFlash.innerHTML)
+    resultFlash.innerHTML = ""
+    //resultFlash.innerHTML = numberOfStates
+    resultFlash.innerHTML = `The search yields: ${numberOfStates} county/ies`
+  }
