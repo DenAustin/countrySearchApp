@@ -47,12 +47,7 @@ filterNationsByStrSequence()
 // Event listener for the buttons and input
 
 startLetterBtn.addEventListener("click", function(){
-  if(searchField.value.length == 1){
-    filterCountriesByStartingStr()
-  }else{
-    alert("ENTER FIRST LETTER OF THE COUNTRY")
-  }
-  
+  filterCountriesByStartingStr()
 })
 searchStringsBtn.addEventListener("click", function(){
   
