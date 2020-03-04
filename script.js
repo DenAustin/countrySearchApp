@@ -38,23 +38,35 @@ filterCountriesByStartingStr()
 const filterNationsByStrSequence = () => {
   countriesContainer.innerHTML = ""
   let clues = document.querySelector(".search-field").value;
+
+/*
   const filteredCountries = countries.filter((country) => country.toLowerCase().indexOf(clues.toLowerCase()) > -1)
-  showCountries(filteredCountries)
+  */
+
+  const filteredCountries = countries.filter((country) => country.toLowerCase().includes(clues.toLowerCase()))
+  //console.log(filteredCountries.length )
+
+  
+  //showCountries(filteredCountries)
   return showCountries(filteredCountries)
+
 }
 filterNationsByStrSequence()
+
+
+
 
 //<i class="fas fa-sort-alpha-up"></i>
 
 // Event listener for the buttons and input
 
 startLetterBtn.addEventListener("click", function(){
-  if(searchField.value.length == 1){
+  if(searchField.value.length === 1){
     filterCountriesByStartingStr()
     numberOfStates = filterCountriesByStartingStr().length
     resultFlash.innerHTML = ""
-    //resultFlash.innerHTML = numberOfStates
-    resultFlash.innerHTML = `The search yields: ${numberOfStates} county/ies`
+
+    resultFlash.innerHTML = `The search yields: ${numberOfStates} country/ies`
   }else{
     alert("THIS BUTTON SEARCHES BY FIRST LETTER OF COUNTRY")
   }
@@ -63,6 +75,7 @@ startLetterBtn.addEventListener("click", function(){
 searchStringsBtn.addEventListener("click", function(){
   
   filterNationsByStrSequence()
+   
   
 })
 
@@ -76,22 +89,15 @@ reverseButton.addEventListener("click", function(){
       countriesContainer.innerHTML = ""
       let clues = document.querySelector(".search-field").value;
       let revCountries = countries.reverse()
-      const filteredCountries = revCountries.filter((country) => country.toLowerCase().includes(clues.toLowerCase()))
-      showCountries(filteredCountries)
-      //showCountries(filteredCountries)
-      showCountries(filteredCountries)
+      const filteredCountries = countries.filter((country) => country.toLowerCase().includes(clues.toLowerCase()))
 
-     
+       
+      showCountries(filteredCountries) //Why is this call useful
       
-      return filteredCountries
-      
+      resultFlash.innerHTML = `The search yields: ${filteredCountries.length} county/ies`
     }
     
     filterRepsByStrSequence()
-    //I want this event with the >= click instead
-    console.log(filterRepsByStrSequence().length)
-    resultFlash.innerHTML = ""
-    resultFlash.innerHTML = `The search yields: ${filterRepsByStrSequence().length} county/ies`
 
 
   }else{
@@ -107,17 +113,9 @@ reverseButton.addEventListener("click", function(){
   }
 });
 
-
 let unneededIcon = document.querySelector(".display-order")
 unneededIcon.remove()
 
-//code to flash result
-/*
-      numberOfStates = filterRepsByStrSequence().length
-      resultFlash.innerHTML = ""
-      //resultFlash.innerHTML = numberOfStates
-      resultFlash.innerHTML = `The search yields: ${numberOfStates} county/ies`
-      */
 
 
 
